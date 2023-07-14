@@ -1,3 +1,0 @@
-D:/ProgProjects/Saltman/build/CMakeFiles/main.dir
-D:/ProgProjects/Saltman/build/CMakeFiles/edit_cache.dir
-D:/ProgProjects/Saltman/build/CMakeFiles/rebuild_cache.dir
