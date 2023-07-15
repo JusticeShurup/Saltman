@@ -26,3 +26,5 @@
 # Ignore all local history of files
 .history
 .ionide
+.vscode/c_cpp_properties.json
+.vscode/settings.json

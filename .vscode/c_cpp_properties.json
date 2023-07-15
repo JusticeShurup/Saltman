@@ -4,7 +4,8 @@
             "name": "Win32",
             "includePath": [
                 "D:/SFML-2.6.0/include",
-                "D:/ProgProjects/Saltman/include"
+                "D:/ProgProjects/Saltman/include",
+                "C:/Boost/include/boost-1_82"
             ],
             "defines": [
                 "_DEBUG",

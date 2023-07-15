@@ -1,12 +1,16 @@
 #ifndef _GAME_H_
 #define _GAME_H_
+
 #include <SFML/Graphics.hpp>
+#include "Containers/AssetsContainer.h"
 
 class Game
 {    
 public:
     Game();
     ~Game();
+
+    void run();
 
     void handleInput();
     void update();
@@ -17,9 +21,13 @@ public:
     sf::Time getElapsedTime();
 
 private:
-    sf::RenderWindow m_window;
-    sf::Clock m_clock;
-    sf::Event m_event;
+    sf::RenderWindow* window_;
+    sf::Clock clock_;
+    sf::Event event_;
+    bool is_running_;
+
+
+    sf::Sprite character_;
 
 };
 

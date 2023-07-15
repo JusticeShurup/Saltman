@@ -16,11 +16,10 @@ public:
 
     sf::Vector2f getPosition() const;
 
-
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 private:
-    sf::Vector2f position;
-    std::vector<sf::Sprite> sprites;
+    sf::Vector2f m_position;
+    std::vector<sf::Sprite> m_sprites;
 };
 
 #endif 
