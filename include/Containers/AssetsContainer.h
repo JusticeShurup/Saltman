@@ -17,6 +17,9 @@ public:
     static AssetsContainer* getInstance();
 
     sf::Texture* getTexture(std::string folderName, std::string textureName);
+    sf::Texture* getCharacterTexture(std::string textureName);
+    sf::Texture* getCharacterTextureSheet(std::string sheetName);
+    
 private:
     AssetsContainer();
     
@@ -24,8 +27,8 @@ private:
     void loadSounds();
 
     //<FolderName, Map<TextureName, Texture>>
-    std::map<std::string, std::map<std::string, sf::Texture*>> _textures; 
-    std::map<std::string, std::map<std::string, sf::Sound*>> _sounds; 
+    std::map<std::string, std::map<std::string, sf::Texture*>> textures_; 
+    std::map<std::string, std::map<std::string, sf::Sound*>> sounds_; 
     static AssetsContainer* instance;
 };
 

@@ -8,7 +8,10 @@ project(${PROJECT_NAME} LANGUAGES CXX)
 
 
 file(GLOB SOURCES "src/*.cpp"
-                "src/Containers/*.cpp")
+                "src/Containers/*.cpp"
+                "src/GameStates/*.cpp"
+                "src/Entities/*.cpp"
+                "src/Animator/*.cpp")
 
 find_package(SFML 2.6.0 COMPONENTS system window graphics network audio REQUIRED)
 

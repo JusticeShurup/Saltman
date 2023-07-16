@@ -27,7 +27,17 @@ AssetsContainer* AssetsContainer::getInstance()
 
 sf::Texture* AssetsContainer::getTexture(std::string folderName, std::string textureName)
 {
-    return _textures[folderName][textureName];
+    return textures_[folderName][textureName];
+}
+
+sf::Texture* AssetsContainer::getCharacterTexture(std::string textureName)
+{
+    return textures_["CharacterTexture"][textureName];
+}
+
+sf::Texture* AssetsContainer::getCharacterTextureSheet(std::string sheetName)
+{
+    return textures_["CharacterTextureSheets"][sheetName];
 }
 
 AssetsContainer::AssetsContainer()
@@ -54,7 +64,7 @@ void AssetsContainer::loadTextures()
 
             folderTextures[fileName] = texture;
         }
-        _textures[folderName] = folderTextures;
+        textures_[folderName] = folderTextures;
     }
 }
 
@@ -77,7 +87,7 @@ void AssetsContainer::loadSounds()
 
             folderSounds[fileName] = texture;
         }
-        _textures[folderName] = folderSounds;
+        textures_[folderName] = folderSounds;
     }
     */
 }

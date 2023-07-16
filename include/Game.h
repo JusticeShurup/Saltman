@@ -2,7 +2,7 @@
 #define _GAME_H_
 
 #include <SFML/Graphics.hpp>
-#include "Containers/AssetsContainer.h"
+#include "GameStates/ActiveGameState.h"
 
 class Game
 {    
@@ -26,9 +26,8 @@ private:
     sf::Event event_;
     bool is_running_;
 
-
-    sf::Sprite character_;
-
+    IGameState* state_;
+    
 };
 
 #endif

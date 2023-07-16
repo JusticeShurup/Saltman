@@ -5,14 +5,15 @@
 Game::Game()
 {
     window_ = new sf::RenderWindow(sf::VideoMode(1920, 1080), "Game");
-    character_.setTexture(*AssetsContainer::getInstance()->getTexture("CharacterTextures", "Stickman.png"), true);
-    character_.setPosition(1920 / 2, 1080 / 2);
-    character_.setScale(sf::Vector2f(5, 5));
+    state_ = new ActiveGameState(this);
+
+    window_->setFramerateLimit(165);
 }
 
 Game::~Game()
 {
     delete window_;
+    delete state_;
 }
 
 void Game::run()
@@ -31,7 +32,7 @@ void Game::handleInput()
 {
     while (window_->pollEvent(event_))
     {
-        // state_.handleInput()
+        state_->handleUpdate(event_);
         if (event_.type == sf::Event::Closed)
         {
             window_->close();
@@ -43,13 +44,13 @@ void Game::handleInput()
 void Game::update()
 {
     float deltaTime = clock_.restart().asSeconds(); 
-    // state_.update(event_)
+    state_->update(deltaTime);
 }
 
 void Game::render()
 {
-    window_->clear(sf::Color::Red);
-    window_->draw(character_);
+    window_->clear();
+    state_->render(*window_, sf::RenderStates::Default);
     window_->display();
 }
 
